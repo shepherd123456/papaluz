@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import static com.example.j3.JavaStarterApplication.baseURL;
+import static com.example.j3.JavaStarterApplication.BASE_URL;
 
 @Component
 @AllArgsConstructor
@@ -31,6 +31,6 @@ public class SignUpListener {
                 LocalDateTime.now().plusMinutes(EXPIRATION_MINUTES)
         ));
         System.out.println(token.getExpiration());
-        emailSenderService.sendEmail(token.getUserEmail(), "Complete Registration", "To confirm your account, please click here: " + baseURL + "/email-verified?token=" + token.getToken());
+        emailSenderService.sendEmail(token.getUserEmail(), "Complete Registration", "To confirm your account, please click here: " + BASE_URL + "/email-verified?token=" + token.getToken());
     }
 }

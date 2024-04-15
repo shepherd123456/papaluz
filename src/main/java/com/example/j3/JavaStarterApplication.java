@@ -10,7 +10,8 @@ import java.time.temporal.ChronoUnit;
 
 @SpringBootApplication
 public class JavaStarterApplication {
-    public static final String baseURL = "https://papaluz.com";
+    public static final String BASE_URL = "https://papaluz.com";
+    public static final String PRIMARY_EMAIL = "info@papaluz.com";
     public static final int REFRESH_TOKEN_DURATION_SECONDS = (int) Duration.of(8, ChronoUnit.MINUTES).toSeconds();
     public static final int ACCESS_TOKEN_DURATION_SECONDS = (int) Duration.of(2, ChronoUnit.MINUTES).toSeconds();
     public static final Path PROFILE_IMAGE_ROOT = Path.of(System.getProperty("user.dir"), "images", "profiles");

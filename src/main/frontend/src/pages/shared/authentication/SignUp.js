@@ -68,7 +68,7 @@ function SignUp() {
       <div className='min-w-[28rem] bg-sky-800 text-white text-2xl p-[1.5rem]'>
         {success ? (
           <div className='flex justify-center items-center'>
-            <div className='p-[1rem]'>Email verification link send to <span className='underline'>{email}</span></div>
+            <div className='p-[1rem]'>Email verification link send to <span className='underline'>{email}</span>. Verify your email</div>
           </div>
         ) : (
           <div>
