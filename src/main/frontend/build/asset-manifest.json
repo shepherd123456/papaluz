@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.15ca9f0f.css",
-    "main.js": "/static/js/main.88e9e7a4.js",
+    "main.js": "/static/js/main.de89b475.js",
     "static/media/papaluz_cerne.jpeg": "/static/media/papaluz_cerne.c37b1e1d644f346fd1f5.jpeg",
     "static/media/papaluz_bile.jpeg": "/static/media/papaluz_bile.47707ed77a03a9fdb247.jpeg",
     "index.html": "/index.html",
     "main.15ca9f0f.css.map": "/static/css/main.15ca9f0f.css.map",
-    "main.88e9e7a4.js.map": "/static/js/main.88e9e7a4.js.map"
+    "main.de89b475.js.map": "/static/js/main.de89b475.js.map"
   },
   "entrypoints": [
     "static/css/main.15ca9f0f.css",
-    "static/js/main.88e9e7a4.js"
+    "static/js/main.de89b475.js"
   ]
 }
