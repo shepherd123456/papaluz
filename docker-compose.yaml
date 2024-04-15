@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  springapp:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      #      https://stackoverflow.com/questions/37482716/using-docker-to-launch-web-app-cant-connect-to-postgresql-db
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresdb:5432/papaluz
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+    depends_on:
+      - postgresdb
+  postgresdb:
+    image: "postgres"
+    environment:
+      POSTGRES_DB: papaluz
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
