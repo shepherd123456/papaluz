@@ -10,12 +10,11 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 import static com.example.j3.JavaStarterApplication.BASE_URL;
+import static com.example.j3.JavaStarterApplication.EMAIL_EXPIRATION_MINUTES;
 
 @Component
 @AllArgsConstructor
 public class SignUpListener {
-    private static final int EXPIRATION_MINUTES = 5;
-
     private PasswordEncoder passwordEncoder;
     private EmailVerificationService emailVerificationService;
     private EmailSenderService emailSenderService;
@@ -28,7 +27,7 @@ public class SignUpListener {
                 userDtoin.email,
                 passwordEncoder.encode(userDtoin.password),
                 UUID.randomUUID().toString(),
-                LocalDateTime.now().plusMinutes(EXPIRATION_MINUTES)
+                LocalDateTime.now().plusMinutes(EMAIL_EXPIRATION_MINUTES)
         ));
         System.out.println(token.getExpiration());
         emailSenderService.sendEmail(token.getUserEmail(), "Complete Registration", "To confirm your account, please click here: " + BASE_URL + "/email-verified?token=" + token.getToken());
