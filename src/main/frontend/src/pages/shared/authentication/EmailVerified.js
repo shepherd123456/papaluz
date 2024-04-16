@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams, useNavigate } from 'react-router-dom'
 import { useCtx } from '../../../hooks/context/useCtx';
 
 function EmailVerified() {
   const [params] = useSearchParams();
+  const navigate = useNavigate();
+
   const { ctx } = useCtx();
 
   const [errMsg, setErrMsg] = useState('');
@@ -12,6 +14,7 @@ function EmailVerified() {
     async function verify(token) {
       try {
         await ctx?.axios.get(`/email-verified?token=${token}`);
+        navigate('/');
       } catch (err) {
         if (err?.response) {
           console.log(err);
